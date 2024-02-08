@@ -15,4 +15,3 @@ services:
       - '8001:8001'
     volumes:
       - .:/usr/src/app # se usa .: para indicar que se monte el directorio actual en el directorio /usr/src/app del contenedor
-      - /usr/src/app/node_modules # se usa para montar el directorio node_modules del contenedor en el directorio /usr/src/app/node_modules del contenedor

@@ -21,4 +21,4 @@ RUN npx prisma migrate deploy
 
 EXPOSE 8001
 
-CMD ["pm2-runtime","ecosystem.config.ts"]
+CMD ["pm2-runtime","ecosystem.config.js"]
