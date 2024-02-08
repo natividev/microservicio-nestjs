@@ -19,6 +19,6 @@ RUN npm run build
 RUN npm install -g pm2
 RUN npx prisma migrate deploy
 
-EXPOSE 4000
+EXPOSE 8001
 
-CMD["pm2-runtime", "ecosystem.config.ts"]
+CMD ["pm2-runtime","ecosystem.config.ts"]
