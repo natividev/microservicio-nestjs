@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  prospero:
+    container_name: prospero-service
+    platform: linux/x86_64
+    init: true # se usa para que el contenedor se inicie con systemd y se pueda usar systemctl para iniciar servicios dentro del contenedor
+    environment:
+      - .env
+    image: prospero-service
+    build:
+      context: . # se usa para indicar la ruta donde se encuentra el Dockerfile y el contexto de la imagen que se va a construir
+      dockerfile: Dockerfile # se usa para indicar el nombre del archivo Dockerfile que se va a usar para construir la imagen
+    ports:
+      - '4000:4000'
+    volumes:
+      - .:/usr/src/app # se usa .: para indicar que se monte el directorio actual en el directorio /usr/src/app del contenedor
+      - /usr/src/app/node_modules # se usa para montar el directorio node_modules del contenedor en el directorio /usr/src/app/node_modules del contenedor
